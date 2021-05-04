@@ -1,0 +1,509 @@
+
+/* GERAL */
+html, body, figure, div, input, textarea, p, h1, h2, h3, h4, h5, h6, ul,li{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    list-style: none;
+
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+body{
+    background-color: #2f3238;
+    font-size: 16px;
+}
+
+h2{
+    text-align: center;
+    color:#fff;
+    font-size: 100px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    font-family: 'Akaya Kanadaka', cursive;
+}
+.container{
+    max-width: 1920px;
+    margin: 0 auto;
+    padding:30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.quadro{
+    width: 400px;
+    height: 400px;
+    background-color: red;
+    cursor: pointer;
+    position: relative;
+    margin:10px;
+}
+
+/********************************** 
+        EXEMPLO 1 ESTADO INICIAL
+***********************************/
+.efeito1{
+    background-image: url("../img/5.png");
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    border: solid 2px #fff;
+}
+    .efeito1::before{
+        content: "";
+        background-color:rgb(0 0 0 / 54%) ;
+        display: block;
+        position:absolute;
+        width: 100%;
+        height: 100%; 
+    }
+    .efeito1 .texto{
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        z-index: 2;   
+        transform: translateX(-220px);
+        transition:All .5s ease;
+        -webkit-transition:All .5s ease;
+        -moz-transition:All .5s ease;
+        -o-transition:All .5s ease;
+    }
+    .efeito1 .texto p{
+        background-color: #fff;
+        max-width: 220px;
+        padding: 10px;
+        font-size: 30px;
+        font-weight: 600;
+        text-align: center;
+        border-radius: 3px;
+    }
+    .efeito1 .texto span{
+        background-color: #fff;
+        display: block;
+        max-width: 165px;
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
+        border-radius: 3px;
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+/********************************** 
+    EXEMPLO 1 APLICANDO HOVER
+***********************************/
+.efeito1:hover .texto{
+    transform: translateX(0);
+    transition:All 1s ease;
+    -webkit-transition:All 1s ease;
+    -moz-transition:All 1s ease;
+    -o-transition:All 1s ease;
+}
+
+/********************************** 
+        EXEMPLO 2 ESTADO INICIAL
+***********************************/
+.efeito2{
+    background-image: url("../img/1.jpg");
+    background-position: center;
+    background-size: cover;
+    border: solid 2px #fff;
+    overflow: hidden;
+}
+    .efeito2::before{
+        content: "";
+        background: linear-gradient(to bottom, rgba(72,76,97,0) 0%, rgba(72,76,97,0.8) 75%);
+        position:absolute;
+        bottom: 0;
+        display: block;
+        width: 100%;
+        height: 0;
+        opacity: 0;
+        transition:All .3s ease;
+        -webkit-transition:All .3s  ease;
+        -moz-transition:All .3s  ease;
+        -o-transition:All .3s  ease;
+    }
+    .efeito2 .texto{
+        width: 100%;
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        z-index: 2;
+    }
+    .efeito2 .texto p{
+        width: 100%;
+        font-size: 30px;
+        font-weight: 500;
+        text-transform: uppercase;
+        text-align: center;
+        color: #fff;
+        border-radius: 3px;
+        opacity: 0;
+        transform: translateY(10px);
+        transition:All .1s ease;
+        -webkit-transition:All .1s  ease;
+        -moz-transition:All .1s  ease;
+        -o-transition:All .1s  ease;
+        transition-delay: 0.15s; 
+    }
+    .efeito2 .texto span{
+        display: block;
+        width: 100%;
+        font-size: 20px;
+        font-weight: 500;
+        border-radius: 3px;
+        text-transform: uppercase;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        opacity: 0;
+        transform: translateY(10px);
+        transition:All .1s ease;
+        -webkit-transition:All .1s  ease;
+        -moz-transition:All .1s  ease;
+        -o-transition:All .1s  ease;
+        transition-delay: 0.15s;
+    }
+
+/********************************** 
+    EXEMPLO 2 APLICANDO HOVER
+***********************************/
+.efeito2:hover::before{
+    height: 100%;
+    opacity: 1;
+    transition:All .5s ease;
+    -webkit-transition:All .5s ease;
+    -moz-transition:All .5s ease;
+    -o-transition:All .5s ease;
+}
+.efeito2:hover p{
+    opacity: 1;
+    transform: translateY(0);
+    transition:All .1s ease;
+    -webkit-transition:All .1s  ease;
+    -moz-transition:All .1s  ease;
+    -o-transition:All .1s  ease;
+    transition-delay: 0.15s;
+}
+.efeito2:hover span{
+    opacity: 1;
+    transform: translateY(0);
+    transition:All .1s ease;
+    -webkit-transition:All .1s  ease;
+    -moz-transition:All .1s  ease;
+    -o-transition:All .1s  ease;
+    transition-delay: 0.15s;
+}
+
+
+/********************************** 
+        EXEMPLO 3 ESTADO INICIAL
+***********************************/
+.efeito3{
+    background-image: url("../img/5.png");
+    background-position: center;
+    background-size: cover;
+    border: solid 2px #fff;
+    overflow: hidden;
+    transition:All .5s ease;
+    -webkit-transition:All .5s ease;
+    -moz-transition:All .5s ease;
+    -o-transition:All .5s ease;
+}
+    .efeito3::before{
+        content: "";
+        background-color:rgb(0 0 0 / 54%) ;
+        display: block;
+        width: 100%;
+        height: 100%;
+        position:absolute;
+    }
+    .efeito3 .texto{
+        position: absolute;
+        bottom: -100%;
+        width: 100%;
+        left: 0;
+        z-index: 2;
+        transition:All .7s ease;
+        -webkit-transition:All .7s ease;
+        -moz-transition:All .7s ease;
+        -o-transition:All .7s ease;
+        transition-delay: 0.2s;
+    }
+    .efeito3 .texto p{
+        background-color: #fff;
+        max-width: 100%;
+        font-size: 30px;
+        text-align: center;
+        font-weight: 600;
+        border-radius: 3px;
+        padding: 10px;
+    }
+   
+/********************************** 
+    EXEMPLO 3 APLICANDO HOVER
+***********************************/
+.efeito3:hover {
+    background-position: center -60px;
+    transition:All .5s ease;
+    -webkit-transition:All .5s ease;
+    -moz-transition:All .5s ease;
+    -o-transition:All .5s ease;
+    transition-delay: 0.2s;
+    
+}
+.efeito3:hover .texto{
+    bottom:0;
+    transition:All .5s ease;
+    -webkit-transition:All .5s ease;
+    -moz-transition:All .5s ease;
+    -o-transition:All .5s ease;
+}
+
+
+/********************************** 
+        EXEMPLO 4 ESTADO INICIAL
+***********************************/
+.efeito4{
+    background-color: #e74c3c;
+    border: solid 2px #fff;
+    overflow: hidden;
+}
+.efeito4 ul{
+    background-color: #ff9800;
+    border-left: solid 2px #fff;
+    position: absolute;
+    left: -100%;
+    height: 100%;
+    width: 30%;
+    transition:All .5s;
+    -webkit-transition:All .5s;
+    -moz-transition:All .5s;
+    -o-transition:All .5s;
+}
+.efeito4 ul li{
+    padding:20px;
+}
+  
+/********************************** 
+    EXEMPLO 4 APLICANDO HOVER
+***********************************/
+.efeito4:hover ul{
+    left: 0;
+    transition:All .5s;
+    -webkit-transition:All .5s;
+    -moz-transition:All .5s;
+    -o-transition:All .5s;
+}
+.efeito4 ul li:hover {
+    color: #fff;
+    padding-left:25px;
+    transition:All .5s;
+    -webkit-transition:All .5s;
+    -moz-transition:All .5s;
+    -o-transition:All .5s;
+}
+
+/********************************** 
+        EXEMPLO 5 ESTADO INICIAL
+***********************************/
+.efeito5{
+    background-image:url(../img/2.jpg);
+    background-size: 150%;
+    border: solid 2px #fff;
+    overflow: hidden;
+    transition:All .3s;
+    -webkit-transition:All .3s;
+    -moz-transition:All .3s;
+    -o-transition:All .3s;
+}
+    .efeito5::before{
+        content: "";
+        background-color: rgb(0 0 0 / 59%);
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition:All .3s;
+        -webkit-transition:All .3s;
+        -moz-transition:All .3s;
+        -o-transition:All .3s;
+    }
+
+/********************************** 
+    EXEMPLO 5 APLICANDO HOVER
+***********************************/
+.efeito5:hover{
+    background-size: 170%;
+    transition:All .3s;
+    -webkit-transition:All .3s;
+    -moz-transition:All .3s;
+    -o-transition:All .3s;
+}
+.efeito5:hover::before{
+    opacity: 1;
+    transition:All .3s;
+    -webkit-transition:All .3s;
+    -moz-transition:All .3s;
+    -o-transition:All .3s;
+}
+
+
+/********************************** 
+        EXEMPLO 6 ESTADO INICIAL
+***********************************/
+.efeito6{
+    border: solid 2px #fff;
+    overflow: hidden;
+    transition:All .3s;
+    -webkit-transition:All .3s;
+    -moz-transition:All .3s;
+    -o-transition:All .3s;
+}
+.efeito6 img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    transition:All .3s;
+    -webkit-transition:All .3s;
+    -moz-transition:All .3s;
+    -o-transition:All .3s;
+}
+.efeito6 img:nth-child(1){
+    opacity: 0;
+}
+.efeito6 img:nth-child(2){
+    opacity: 1;
+}
+/********************************** 
+    EXEMPLO 6 APLICANDO HOVER
+***********************************/
+.efeito6:hover img:nth-child(1){
+    opacity: 1;
+}
+.efeito6:hover img:nth-child(2){
+    opacity: 0;
+}
+
+/********************************** 
+        EXEMPLO 7 ESTADO INICIAL
+***********************************/
+.efeito7{
+    background-image: url(../img/7.jpg);
+    border: solid 2px #fff;
+    overflow: hidden;
+    transition:All .3s;
+    -webkit-transition:All .3s;
+    -moz-transition:All .3s;
+    -o-transition:All .3s;
+}
+
+.efeito7::before{
+    content: " ";
+    background-color:rgb(20 128 251 / 94%);
+    display: block;
+    width: 470px;
+    height: 580px;
+    position: absolute;
+    transform: rotate(45deg) translate(-615px, -40px);
+    transition:All .3s;
+    -webkit-transition:All .3s;
+    -moz-transition:All .3s;
+    -o-transition:All .3s;
+}
+
+.efeito7::after{
+    content: " ";
+    background-color:#00316b;
+    display: block;
+    width: 470px;
+    height: 580px;
+    position: absolute;
+    transform: rotate(45deg) translate(425px, -40px);
+    transition:All .3s;
+    -webkit-transition:All .3s;
+    -moz-transition:All .3s;
+    -o-transition:All .3s;
+}
+.efeito7 h3{
+    color: #fff;
+    font-size: 35px;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 100%;
+    z-index: 2;
+    opacity: 0;
+}
+
+/********************************** 
+    EXEMPLO 7 APLICANDO HOVER
+***********************************/
+.efeito7:hover::before{
+    transform: rotate(45deg) translate(-325px, -40px);
+    transition:All .3s;
+    -webkit-transition:All .3s;
+    -moz-transition:All .3s;
+    -o-transition:All .3s;
+}
+.efeito7:hover::after{
+    transform: rotate(45deg) translate(145px, -40px);
+    transition:All .3s;
+    -webkit-transition:All .3s;
+    -moz-transition:All .3s;
+    -o-transition:All .3s;
+}
+.efeito7:hover h3{
+    opacity: 1;
+    transition:All .3s;
+    -webkit-transition:All .3s;
+    -moz-transition:All .3s;
+    -o-transition:All .3s;
+    transition-delay: .5s;
+}
+
+/********************************** 
+        EXEMPLO 8 ESTADO INICIAL
+***********************************/
+.efeito8{
+    background-color: transparent;
+    border: solid 2px #fff;
+    overflow: hidden;
+    transition:All .3s;
+    -webkit-transition:All .3s;
+    -moz-transition:All .3s;
+    -o-transition:All .3s;
+}
+.efeito8 img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    transition:All .3s;
+    -webkit-transition:All .3s;
+    -moz-transition:All .3s;
+    -o-transition:All .3s;
+}
+.efeito8 img:nth-child(2){
+    transform: translateY(399px);
+}
+
+/********************************** 
+    EXEMPLO 8 APLICANDO HOVER
+***********************************/
+.efeito8:hover img:nth-child(1){
+    transform: translateY(-399px);
+}
+.efeito8:hover img:nth-child(2){
+    transform: translateY(0);
+}
